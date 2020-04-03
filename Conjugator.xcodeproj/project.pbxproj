@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,22 @@
 		EC2B9E7824377BFF008D705C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC2B9E7624377BFF008D705C /* LaunchScreen.storyboard */; };
 		EC2B9E8324377BFF008D705C /* ConjugatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2B9E8224377BFF008D705C /* ConjugatorTests.swift */; };
 		EC2B9E8E24377BFF008D705C /* ConjugatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2B9E8D24377BFF008D705C /* ConjugatorUITests.swift */; };
+		EC2B9EA224377DA8008D705C /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2B9EA124377DA8008D705C /* Question.swift */; };
+		EC2B9EA424377DC7008D705C /* Verb.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2B9EA324377DC7008D705C /* Verb.swift */; };
+		EC2B9EA924377F2C008D705C /* ConjugationTenseForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2B9EA824377F2C008D705C /* ConjugationTenseForm.swift */; };
+		EC2B9EAC24378156008D705C /* CSV in Frameworks */ = {isa = PBXBuildFile; productRef = EC2B9EAB24378156008D705C /* CSV */; };
+		EC2B9EAE24378163008D705C /* CSVParse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2B9EAD24378163008D705C /* CSVParse.swift */; };
+		EC2B9EB02437818E008D705C /* verb_database.csv in Resources */ = {isa = PBXBuildFile; fileRef = EC2B9EAF2437818E008D705C /* verb_database.csv */; };
+		EC2B9EB92437885C008D705C /* PracticeSet+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2B9EB72437885C008D705C /* PracticeSet+CoreDataClass.swift */; };
+		EC2B9EBA2437885C008D705C /* PracticeSet+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2B9EB82437885C008D705C /* PracticeSet+CoreDataProperties.swift */; };
+		EC2B9EC324378D21008D705C /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2B9EBD24378D21008D705C /* Dictionary.swift */; };
+		EC2B9EC424378D21008D705C /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2B9EBE24378D21008D705C /* Helper.swift */; };
+		ECB01E7C2437B3200072324D /* PracticeSetList.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB01E7B2437B3200072324D /* PracticeSetList.swift */; };
+		ECB01E822437D50D0072324D /* NewPracticeSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB01E812437D50D0072324D /* NewPracticeSet.swift */; };
+		ECB01E862437DD7A0072324D /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB01E852437DD7A0072324D /* Game.swift */; };
+		ECB01E882437DFA10072324D /* GameSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB01E872437DFA10072324D /* GameSetup.swift */; };
+		ECB01E8A2437E5DD0072324D /* PracticeSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB01E892437E5DD0072324D /* PracticeSession.swift */; };
+		ECB01E8E2437EF640072324D /* SessionEnd.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB01E8D2437EF640072324D /* SessionEnd.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +67,21 @@
 		EC2B9E8924377BFF008D705C /* ConjugatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConjugatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC2B9E8D24377BFF008D705C /* ConjugatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConjugatorUITests.swift; sourceTree = "<group>"; };
 		EC2B9E8F24377BFF008D705C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC2B9EA124377DA8008D705C /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		EC2B9EA324377DC7008D705C /* Verb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Verb.swift; sourceTree = "<group>"; };
+		EC2B9EA824377F2C008D705C /* ConjugationTenseForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConjugationTenseForm.swift; sourceTree = "<group>"; };
+		EC2B9EAD24378163008D705C /* CSVParse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVParse.swift; sourceTree = "<group>"; };
+		EC2B9EAF2437818E008D705C /* verb_database.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = verb_database.csv; sourceTree = "<group>"; };
+		EC2B9EB72437885C008D705C /* PracticeSet+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PracticeSet+CoreDataClass.swift"; sourceTree = "<group>"; };
+		EC2B9EB82437885C008D705C /* PracticeSet+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PracticeSet+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		EC2B9EBD24378D21008D705C /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
+		EC2B9EBE24378D21008D705C /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		ECB01E7B2437B3200072324D /* PracticeSetList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeSetList.swift; sourceTree = "<group>"; };
+		ECB01E812437D50D0072324D /* NewPracticeSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPracticeSet.swift; sourceTree = "<group>"; };
+		ECB01E852437DD7A0072324D /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		ECB01E872437DFA10072324D /* GameSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSetup.swift; sourceTree = "<group>"; };
+		ECB01E892437E5DD0072324D /* PracticeSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeSession.swift; sourceTree = "<group>"; };
+		ECB01E8D2437EF640072324D /* SessionEnd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionEnd.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC2B9EAC24378156008D705C /* CSV in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,13 +133,14 @@
 		EC2B9E6724377BFD008D705C /* Conjugator */ = {
 			isa = PBXGroup;
 			children = (
+				EC2B9E9F24377D14008D705C /* Structure */,
+				EC2B9EA024377D7A008D705C /* Data */,
+				EC2B9EB2243783DB008D705C /* Views */,
 				EC2B9E6824377BFD008D705C /* AppDelegate.swift */,
 				EC2B9E6A24377BFD008D705C /* SceneDelegate.swift */,
-				EC2B9E6F24377BFD008D705C /* ContentView.swift */,
 				EC2B9E7124377BFF008D705C /* Assets.xcassets */,
 				EC2B9E7624377BFF008D705C /* LaunchScreen.storyboard */,
 				EC2B9E7924377BFF008D705C /* Info.plist */,
-				EC2B9E6C24377BFD008D705C /* Conjugator.xcdatamodeld */,
 				EC2B9E7324377BFF008D705C /* Preview Content */,
 			);
 			path = Conjugator;
@@ -139,6 +172,44 @@
 			path = ConjugatorUITests;
 			sourceTree = "<group>";
 		};
+		EC2B9E9F24377D14008D705C /* Structure */ = {
+			isa = PBXGroup;
+			children = (
+				EC2B9EA824377F2C008D705C /* ConjugationTenseForm.swift */,
+				EC2B9EA324377DC7008D705C /* Verb.swift */,
+				EC2B9EA124377DA8008D705C /* Question.swift */,
+				ECB01E852437DD7A0072324D /* Game.swift */,
+				EC2B9EB72437885C008D705C /* PracticeSet+CoreDataClass.swift */,
+				EC2B9EB82437885C008D705C /* PracticeSet+CoreDataProperties.swift */,
+			);
+			path = Structure;
+			sourceTree = "<group>";
+		};
+		EC2B9EA024377D7A008D705C /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				EC2B9EAD24378163008D705C /* CSVParse.swift */,
+				EC2B9EAF2437818E008D705C /* verb_database.csv */,
+				EC2B9E6C24377BFD008D705C /* Conjugator.xcdatamodeld */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		EC2B9EB2243783DB008D705C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EC2B9E6F24377BFD008D705C /* ContentView.swift */,
+				ECB01E7B2437B3200072324D /* PracticeSetList.swift */,
+				ECB01E812437D50D0072324D /* NewPracticeSet.swift */,
+				ECB01E892437E5DD0072324D /* PracticeSession.swift */,
+				ECB01E8D2437EF640072324D /* SessionEnd.swift */,
+				ECB01E872437DFA10072324D /* GameSetup.swift */,
+				EC2B9EBD24378D21008D705C /* Dictionary.swift */,
+				EC2B9EBE24378D21008D705C /* Helper.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -155,6 +226,9 @@
 			dependencies = (
 			);
 			name = Conjugator;
+			packageProductDependencies = (
+				EC2B9EAB24378156008D705C /* CSV */,
+			);
 			productName = Conjugator;
 			productReference = EC2B9E6524377BFD008D705C /* Conjugator.app */;
 			productType = "com.apple.product-type.application";
@@ -227,6 +301,9 @@
 				Base,
 			);
 			mainGroup = EC2B9E5C24377BFD008D705C;
+			packageReferences = (
+				EC2B9EAA24378156008D705C /* XCRemoteSwiftPackageReference "CSV.swift" */,
+			);
 			productRefGroup = EC2B9E6624377BFD008D705C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -245,6 +322,7 @@
 			files = (
 				EC2B9E7824377BFF008D705C /* LaunchScreen.storyboard in Resources */,
 				EC2B9E7524377BFF008D705C /* Preview Assets.xcassets in Resources */,
+				EC2B9EB02437818E008D705C /* verb_database.csv in Resources */,
 				EC2B9E7224377BFF008D705C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -271,9 +349,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC2B9E6924377BFD008D705C /* AppDelegate.swift in Sources */,
+				ECB01E822437D50D0072324D /* NewPracticeSet.swift in Sources */,
+				EC2B9EBA2437885C008D705C /* PracticeSet+CoreDataProperties.swift in Sources */,
 				EC2B9E6E24377BFD008D705C /* Conjugator.xcdatamodeld in Sources */,
 				EC2B9E7024377BFD008D705C /* ContentView.swift in Sources */,
+				ECB01E882437DFA10072324D /* GameSetup.swift in Sources */,
+				EC2B9EC324378D21008D705C /* Dictionary.swift in Sources */,
+				EC2B9EA424377DC7008D705C /* Verb.swift in Sources */,
+				EC2B9EA224377DA8008D705C /* Question.swift in Sources */,
 				EC2B9E6B24377BFD008D705C /* SceneDelegate.swift in Sources */,
+				ECB01E8A2437E5DD0072324D /* PracticeSession.swift in Sources */,
+				EC2B9EA924377F2C008D705C /* ConjugationTenseForm.swift in Sources */,
+				ECB01E8E2437EF640072324D /* SessionEnd.swift in Sources */,
+				EC2B9EC424378D21008D705C /* Helper.swift in Sources */,
+				EC2B9EB92437885C008D705C /* PracticeSet+CoreDataClass.swift in Sources */,
+				ECB01E7C2437B3200072324D /* PracticeSetList.swift in Sources */,
+				EC2B9EAE24378163008D705C /* CSVParse.swift in Sources */,
+				ECB01E862437DD7A0072324D /* Game.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -598,6 +690,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EC2B9EAA24378156008D705C /* XCRemoteSwiftPackageReference "CSV.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/yaslab/CSV.swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.4.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EC2B9EAB24378156008D705C /* CSV */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EC2B9EAA24378156008D705C /* XCRemoteSwiftPackageReference "CSV.swift" */;
+			productName = CSV;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		EC2B9E6C24377BFD008D705C /* Conjugator.xcdatamodeld */ = {

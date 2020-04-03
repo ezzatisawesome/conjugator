@@ -9,13 +9,20 @@
 import UIKit
 import CoreData
 
+var verbList = [String]() //array of verbs in string form (helps to located verbs for verbData)
+var verbData = [Verb]() //complete array of complete verb classes
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var csv = CSVParse()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        verbData = csv.getVerbData()
+        verbList = csv.getVerbsAlreadyInput()
+        
         return true
     }
 

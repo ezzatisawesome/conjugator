@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import Neumorphic
 
 struct PracticeSetList: View {
     @Environment(\.managedObjectContext) var managedObjectContext
@@ -16,57 +17,92 @@ struct PracticeSetList: View {
     
     @Binding var isRootActive: Bool
     @State var isActive = false
+    @State var isActiveSets = false
+    @State var isSheet = false
+    @State var isEdit = false
     
-    /*
-    func removeSet(at offsets: IndexSet) {
-        for index in offsets {
-            let set = sets[index]
-            managedObjectContext.delete(set)
+    func deleteSet(_ index: Int) {
+        if(index == -1) {
+            return
         }
+        else {
+            managedObjectContext.delete(sets[index])
+        }
+        
         do {
             try managedObjectContext.save()
         } catch {
-            // handle the Core Data error
+            
         }
     }
-    */
     
     var body: some View {
-        VStack {
-            ScrollView(.horizontal) {
-                HStack {
-                    
-                    VStack {
-                        NavigationLink(destination: NewPracticeSet(), isActive: self.$isActive) {
-                            EmptyView()
+        ZStack {
+            
+            LinearGradient(gradient: Gradient(colors: [.white, Color("Background")]), startPoint: .topLeading, endPoint: .bottomTrailing).edgesIgnoringSafeArea(.all) // background colors
+
+            VStack {
+                // Horizontal scroll view of sets
+                ScrollView(.horizontal) {
+                    HStack(spacing: 20) {
+                        
+                        /// Link to create new set
+                        VStack {
+                            NavigationLink(destination: NewPracticeSet(), isActive: self.$isActive) {
+                                ZStack {
+                                    RoundedRectangle(cornerRadius: 15.0)
+                                        .fill(Color(.white))
+                                        .frame(width:150, height: 250)
+                                        .modifier(Neumorphic())
+                                        /// Opens up setup
+                                        .onTapGesture{
+                                            self.isActive = true
+                                        }
+                                    VStack(alignment: .center){
+                                        Text("New Set")
+                                            
+
+                                        Image(systemName: "plus.circle")
+                                    }
+                                }
+                            }
                         }
-                        Button(action: {self.isActive = true},
-                               label: { VStack {
-                                    Text("New Practice Set")
-                                    Image(systemName: "plus.circle")
-                                }}
-                        )
-                            .padding()
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 10.0)
-                                    .stroke(lineWidth: 2)
-                            )
-                    }.padding()
-                    
-                    ForEach(sets) { set in NavigationLink(destination: LandingPage(set: set)) {
-                            Text(set.name)
-                                .padding()
-                                .overlay(
-                                    RoundedRectangle(cornerRadius: 15)
-                                    .stroke(lineWidth: 2)
-                                )
+                        
+                        /**
+                         * Links to set's landing pages and editing views
+                         */
+                        ForEach(sets) {
+                            set in NavigationLink(destination: LandingPage(set: set), isActive: self.$isActiveSets) {
+                                ZStack {
+                                    RoundedRectangle(cornerRadius: 15.0)
+                                        .fill(Color(.white))
+                                        .frame(width: 150, height: 250)
+                                        .modifier(Neumorphic())
+                                        /// Opens landing page
+                                        .onTapGesture{
+                                            self.isActiveSets = true
+                                        }
+                                        /// Opens up editing sheet
+                                        .onLongPressGesture {
+                                            self.isSheet = true
+                                        }.actionSheet(isPresented:self.$isSheet) {
+                                            ActionSheet(title: Text(set.name), message: Text("Edit or Delete"), buttons: [
+                                                    .default(Text("Edit")) {self.isEdit = true},
+                                                    .destructive(Text("Delete")) {self.deleteSet(self.sets.firstIndex(of: set) ?? -1)},
+                                                    .cancel()
+                                                ]
+                                            )
+                                        }
+                                    /// name of current set
+                                    Text(set.name)
+                                }
+                            }
                         }
                     }
-                     .padding()
-                    
-                }.navigationBarItems(trailing: EditButton())
+                }.padding()
             }
-        }.padding()
+        }.navigationBarTitle("Card Sets")
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 

@@ -32,6 +32,9 @@
 		ECB01E882437DFA10072324D /* GameSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB01E872437DFA10072324D /* GameSetup.swift */; };
 		ECB01E8A2437E5DD0072324D /* PracticeSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB01E892437E5DD0072324D /* PracticeSession.swift */; };
 		ECB01E8E2437EF640072324D /* SessionEnd.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB01E8D2437EF640072324D /* SessionEnd.swift */; };
+		ECB01E902437FE1F0072324D /* testDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB01E8F2437FE1F0072324D /* testDesign.swift */; };
+		ECB01E95243805CC0072324D /* Neumorphic in Frameworks */ = {isa = PBXBuildFile; productRef = ECB01E94243805CC0072324D /* Neumorphic */; };
+		ECB01E97243818580072324D /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB01E96243818580072324D /* Background.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +85,8 @@
 		ECB01E872437DFA10072324D /* GameSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSetup.swift; sourceTree = "<group>"; };
 		ECB01E892437E5DD0072324D /* PracticeSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeSession.swift; sourceTree = "<group>"; };
 		ECB01E8D2437EF640072324D /* SessionEnd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionEnd.swift; sourceTree = "<group>"; };
+		ECB01E8F2437FE1F0072324D /* testDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testDesign.swift; sourceTree = "<group>"; };
+		ECB01E96243818580072324D /* Background.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECB01E95243805CC0072324D /* Neumorphic in Frameworks */,
 				EC2B9EAC24378156008D705C /* CSV in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -198,6 +204,7 @@
 		EC2B9EB2243783DB008D705C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				ECB01E98243818640072324D /* Modifiers */,
 				EC2B9E6F24377BFD008D705C /* ContentView.swift */,
 				ECB01E7B2437B3200072324D /* PracticeSetList.swift */,
 				ECB01E812437D50D0072324D /* NewPracticeSet.swift */,
@@ -206,8 +213,17 @@
 				ECB01E872437DFA10072324D /* GameSetup.swift */,
 				EC2B9EBD24378D21008D705C /* Dictionary.swift */,
 				EC2B9EBE24378D21008D705C /* Helper.swift */,
+				ECB01E8F2437FE1F0072324D /* testDesign.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		ECB01E98243818640072324D /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				ECB01E96243818580072324D /* Background.swift */,
+			);
+			path = Modifiers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,6 +244,7 @@
 			name = Conjugator;
 			packageProductDependencies = (
 				EC2B9EAB24378156008D705C /* CSV */,
+				ECB01E94243805CC0072324D /* Neumorphic */,
 			);
 			productName = Conjugator;
 			productReference = EC2B9E6524377BFD008D705C /* Conjugator.app */;
@@ -303,6 +320,7 @@
 			mainGroup = EC2B9E5C24377BFD008D705C;
 			packageReferences = (
 				EC2B9EAA24378156008D705C /* XCRemoteSwiftPackageReference "CSV.swift" */,
+				ECB01E93243805CC0072324D /* XCRemoteSwiftPackageReference "neumorphic" */,
 			);
 			productRefGroup = EC2B9E6624377BFD008D705C /* Products */;
 			projectDirPath = "";
@@ -360,12 +378,14 @@
 				EC2B9E6B24377BFD008D705C /* SceneDelegate.swift in Sources */,
 				ECB01E8A2437E5DD0072324D /* PracticeSession.swift in Sources */,
 				EC2B9EA924377F2C008D705C /* ConjugationTenseForm.swift in Sources */,
+				ECB01E902437FE1F0072324D /* testDesign.swift in Sources */,
 				ECB01E8E2437EF640072324D /* SessionEnd.swift in Sources */,
 				EC2B9EC424378D21008D705C /* Helper.swift in Sources */,
 				EC2B9EB92437885C008D705C /* PracticeSet+CoreDataClass.swift in Sources */,
 				ECB01E7C2437B3200072324D /* PracticeSetList.swift in Sources */,
 				EC2B9EAE24378163008D705C /* CSVParse.swift in Sources */,
 				ECB01E862437DD7A0072324D /* Game.swift in Sources */,
+				ECB01E97243818580072324D /* Background.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -700,6 +720,14 @@
 				minimumVersion = 2.4.3;
 			};
 		};
+		ECB01E93243805CC0072324D /* XCRemoteSwiftPackageReference "neumorphic" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/costachung/neumorphic";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -707,6 +735,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = EC2B9EAA24378156008D705C /* XCRemoteSwiftPackageReference "CSV.swift" */;
 			productName = CSV;
+		};
+		ECB01E94243805CC0072324D /* Neumorphic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ECB01E93243805CC0072324D /* XCRemoteSwiftPackageReference "neumorphic" */;
+			productName = Neumorphic;
 		};
 /* End XCSwiftPackageProductDependency section */
 

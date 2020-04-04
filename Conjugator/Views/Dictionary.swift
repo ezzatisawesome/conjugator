@@ -12,10 +12,10 @@ struct Dictionary: View {
     var body: some View {
         List {
             ForEach(verbData) { verb in NavigationLink(destination: DictionaryDetail(verb: verb)) {
-                    Text(verb.name)
+                Text(verb.name)
                 }
             }
-        }.navigationBarTitle(Text("Verb Dictionary"))
+        }.navigationBarTitle("Dictionary")
     }
 }
 

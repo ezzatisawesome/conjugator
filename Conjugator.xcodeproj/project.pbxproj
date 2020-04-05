@@ -26,6 +26,7 @@
 		EC2B9EBA2437885C008D705C /* PracticeSet+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2B9EB82437885C008D705C /* PracticeSet+CoreDataProperties.swift */; };
 		EC2B9EC324378D21008D705C /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2B9EBD24378D21008D705C /* Dictionary.swift */; };
 		EC2B9EC424378D21008D705C /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2B9EBE24378D21008D705C /* Helper.swift */; };
+		ECA8F1032439516500C1BD73 /* testDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA8F1022439516500C1BD73 /* testDictionary.swift */; };
 		ECB01E7C2437B3200072324D /* PracticeSetList.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB01E7B2437B3200072324D /* PracticeSetList.swift */; };
 		ECB01E822437D50D0072324D /* NewPracticeSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB01E812437D50D0072324D /* NewPracticeSet.swift */; };
 		ECB01E862437DD7A0072324D /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB01E852437DD7A0072324D /* Game.swift */; };
@@ -79,6 +80,7 @@
 		EC2B9EB82437885C008D705C /* PracticeSet+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PracticeSet+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		EC2B9EBD24378D21008D705C /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
 		EC2B9EBE24378D21008D705C /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		ECA8F1022439516500C1BD73 /* testDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testDictionary.swift; sourceTree = "<group>"; };
 		ECB01E7B2437B3200072324D /* PracticeSetList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeSetList.swift; sourceTree = "<group>"; };
 		ECB01E812437D50D0072324D /* NewPracticeSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPracticeSet.swift; sourceTree = "<group>"; };
 		ECB01E852437DD7A0072324D /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 				EC2B9EBD24378D21008D705C /* Dictionary.swift */,
 				EC2B9EBE24378D21008D705C /* Helper.swift */,
 				ECB01E8F2437FE1F0072324D /* testDesign.swift */,
+				ECA8F1022439516500C1BD73 /* testDictionary.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -383,6 +386,7 @@
 				EC2B9EC424378D21008D705C /* Helper.swift in Sources */,
 				EC2B9EB92437885C008D705C /* PracticeSet+CoreDataClass.swift in Sources */,
 				ECB01E7C2437B3200072324D /* PracticeSetList.swift in Sources */,
+				ECA8F1032439516500C1BD73 /* testDictionary.swift in Sources */,
 				EC2B9EAE24378163008D705C /* CSVParse.swift in Sources */,
 				ECB01E862437DD7A0072324D /* Game.swift in Sources */,
 				ECB01E97243818580072324D /* Background.swift in Sources */,

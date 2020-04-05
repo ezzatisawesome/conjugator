@@ -53,7 +53,7 @@ struct ContentView: View {
 
                     
                     ZStack {
-                        NavigationLink(destination: Dictionary(), isActive: self.$isDictionaryActive) {
+                        NavigationLink(destination: testDictionary(), isActive: self.$isDictionaryActive) {
                             EmptyView()
                         }.isDetailLink(false)
                         

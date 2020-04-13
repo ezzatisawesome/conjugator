@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct PracticeSession: View {
+struct GameSession: View {
     @Environment (\.presentationMode) var presentationMode
     @Binding var isLandingPageRootActive: Bool
     
@@ -21,14 +21,15 @@ struct PracticeSession: View {
     
     func checkUserAnswer() {
         if (self.game.isGameOver()) {
+            self.game.currentQuestion.setUserAnswer(ans: self.userAnswer)
             let ans = self.game.checkQuestion(response: self.userAnswer.lowercased())
             self.rightWrong = ans
             self.onRightWrong = true
-            
             self.isEnterLinkActive = true // Enables navigation link to move to next view
         }
         else {
             self.questionCount += 1
+            self.game.currentQuestion.setUserAnswer(ans: self.userAnswer)
             let ans = self.game.checkQuestion(response: self.userAnswer.lowercased())
             self.rightWrong = ans
             self.game.nextQuestion()
@@ -39,14 +40,12 @@ struct PracticeSession: View {
     
     var body: some View {
         ZStack {
-            VStack {
-                Text(self.game.name)
-                
+            VStack(alignment: .leading, spacing: 20) {
+                Text("Question \(self.questionCount)").font(.title)
+
                 Spacer()
                 
-                Text("Question \(self.questionCount)")
-                
-                VStack(alignment: .leading) {
+                VStack(alignment: .leading, spacing: 20) {
                     Text("Infinitive: \(self.game.currentQuestion.infinitive)")
                     Text("Tense: \(self.game.currentQuestion.tense.rawValue)")
                     Text("Form: \(self.game.currentQuestion.form.rawValue)")
@@ -59,18 +58,23 @@ struct PracticeSession: View {
                 Spacer()
                 
                 VStack {
-                    NavigationLink(destination: SessionEnd(isLandingPageRootActive: self.$isLandingPageRootActive, game: self.game), isActive: self.$isEnterLinkActive) {EmptyView()}.isDetailLink(false)
+                    NavigationLink(destination: GameEnd(isLandingPageRootActive: self.$isLandingPageRootActive, game: self.game), isActive: self.$isEnterLinkActive) {EmptyView()}.isDetailLink(false)
 
                     Button(action: {self.checkUserAnswer()},
                            label: {Text("Answer")}
-                    )
+                    ).softButtonStyle(RoundedRectangle(cornerRadius: 10), mainColor: Color.white, textColor: Color.black, darkShadowColor: Color("DarkShadow"), lightShadowColor: Color("LightShadow"))
+                     .frame(width: 100, height: 25)
                 }
+                
+                Spacer()
+                
             }.padding()
             
             ans
             
-            }
-        }
+        }.navigationBarBackButtonHidden(true)
+        .navigationBarTitle(self.game.name)
+    }
         
         @ViewBuilder
         var ans: some View {
@@ -91,35 +95,8 @@ struct PracticeSession: View {
         }
     }
 
-
-struct LandingPage: View {
-    @State var isLandingPageRootActive = false
-    @State var set: PracticeSet
-    @State var isLinkActive: Bool = false
-    @State var game = Game()
-    
-    func setup() {
-        game.setTenses(indPresent: self.set.indPresent, indPreterite: self.set.indPreterite, subPresent: self.set.subPresent, subImperfect: self.set.subImperfect, impAffirmative: self.set.impAffirmative, impNegative: self.set.impNegative)
-        game.setVerbsToPractice(verbs: self.set.verbsToPractice)
-        game.createQuestions()
-        game.scrambleQuestions()
-        game.nextQuestion()
-    }
-    
-    var body: some View {
-        VStack {
-            NavigationLink(destination: PracticeSession(isLandingPageRootActive: self.$isLandingPageRootActive, game: self.game), isActive: self.$isLandingPageRootActive) {EmptyView()}.isDetailLink(false)
-            Button(action: {
-                    self.setup()
-                    self.isLandingPageRootActive = true},
-                   label: {Text("Continue")}
-            )
-        }
-    }
-}
-
 struct PracticeSession_Previews {
     static var previews: some View {
-        PracticeSession(isLandingPageRootActive: .constant(false), game: Game())
+        GameSession(isLandingPageRootActive: .constant(false), game: Game())
     }
 }

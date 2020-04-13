@@ -11,89 +11,121 @@ import Neumorphic
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) var managedObjectContext
-    @FetchRequest(entity: PracticeSet.entity(),
-                  sortDescriptors: [NSSortDescriptor(keyPath: \PracticeSet.name, ascending: true)]
-    ) var sets: FetchedResults<PracticeSet>
+    @FetchRequest(entity: Deck.entity(),
+                  sortDescriptors: [NSSortDescriptor(keyPath: \Deck.name, ascending: true)]
+    ) var decks: FetchedResults<Deck>
     
-    @State var isRootActive = false
-    @State var isDictionaryActive = false
-    @State var isHelperActive = false
-    @State var isQuickAccessActive = false
+    init() {
+        UITableView.appearance().tableFooterView = UIView()
+    }
     
     var body: some View {
         NavigationView {
-            ZStack {
-                
-                LinearGradient(gradient: Gradient(colors: [.white, Color("Background")]), startPoint: .topLeading, endPoint: .bottomTrailing).edgesIgnoringSafeArea(.all)
-                
-                VStack {
-                    VStack {
-                        Text("Conjugator")
-                            .fontWeight(.heavy)
-                            .font(.system(size: 60))
-                            .kerning(5)
-                        Text("Para Español")
-                            .font(.system(size:40))
-                            .kerning(5)
-                    }.padding(.bottom, 50)
-
+            GeometryReader{geometry in
+                HStack {
+                    VStack(alignment: .leading, spacing: geometry.size.height/22) {
+                        self.title
+                        self.dictionaryButton.frame(height: geometry.size.height/20)
+                        self.helperButton.frame(height: geometry.size.height/20)
+                        Spacer()
+                    }.frame(width: geometry.size.width/3)
+                     
                     
-                    Spacer()
+                    Divider()
                     
                     VStack {
-                        NavigationLink(destination: PracticeSetList(isRootActive: self.$isRootActive), isActive: self.$isRootActive) {
-                            EmptyView()
-                        }.isDetailLink(false)
-                        
-                        Button(action: {self.isRootActive = true},
-                               label: {Text("Practice").fontWeight(.bold)}
-                        ).softButtonStyle(RoundedRectangle(cornerRadius: 20))
-                    }.frame(width: 220, height: 50)
-                    .padding(.bottom, 20)
-
-                    
-                    ZStack {
-                        NavigationLink(destination: testDictionary(), isActive: self.$isDictionaryActive) {
-                            EmptyView()
-                        }.isDetailLink(false)
-                        
-                        Button(action: {self.isDictionaryActive = true},
-                               label: {Text("Dictionary").fontWeight(.bold)}
-                        ).softButtonStyle(RoundedRectangle(cornerRadius: 20))
-                    }.frame(width: 180, height: 50)
-                    .padding(.bottom, 20)
-                    
-                    ZStack {
-                        NavigationLink(destination: Helper(), isActive: self.$isHelperActive) {
-                            EmptyView()
-                        }.isDetailLink(false)
-                        
-                        Button(action: {self.isHelperActive = true},
-                               label: {Text("Helper").fontWeight(.bold)}
-                        ).softButtonStyle(RoundedRectangle(cornerRadius: 20))
-                    }.frame(width: 180, height: 50)
-                    .padding(.bottom, 50)
-                    
-                    Spacer()
-                    
-                    Text("Quick Access")
-                    List {
-                        ForEach(sets) {
-                            set in VStack {
-                                NavigationLink(destination: LandingPage(set: set)) {
-                                    Text(set.name)
-                                }
-                            }
-                        }
-                    }.listStyle(GroupedListStyle())
-                    .environment(\.horizontalSizeClass, .regular)
-                    .modifier(Neumorphic())
-                    
-                }.padding()
-            }
+                        Text("Decks").font(.title).underline().kerning(2)
+                        self.deckList
+                    }.navigationBarItems(trailing: EditButton())
+                }
+            }.navigationBarTitle("Conjugations")
         }.navigationViewStyle(StackNavigationViewStyle())
     }
+    
+    var title: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            Text("Para").font(.largeTitle).kerning(5)
+            Text("Español").font(.largeTitle).kerning(5)
+        }
+    }
+    
+    var deckList: some View {
+        List {
+            ForEach(decks) { deck in
+                NavigationLink(destination: GameDetails(set: deck)) {
+                    //Text(deck.wrappedName).font(.title)
+                    deckView(deck: deck)
+                }
+            }.onDelete(perform: removeDeck)
+            //.listRowBackground(Color("Background"))
+             
+            VStack {
+                NavigationLink(destination: NewDeckView()) {
+                    HStack {
+                        Text("New Deck")
+                        Image(systemName: "plus.circle")
+                    }
+                }
+            }
+        }.cornerRadius(20)
+        .padding()
+        .listStyle(GroupedListStyle())
+        .environment(\.horizontalSizeClass, .regular)
+    }
+    
+    @State var dictionaryActive = false
+    var dictionaryButton: some View {
+        GeometryReader { geo in
+            VStack {
+                NavigationLink(destination: Dictionary(), isActive: self.$dictionaryActive) {EmptyView()}
+                Button(action: {self.dictionaryActive.toggle()},
+                       label: {Text("Dictionary")})
+                .softButtonStyle(RoundedRectangle(cornerRadius: 10), mainColor: Color("Background"), textColor: Color.black, darkShadowColor: Color("DarkShadow"), lightShadowColor: Color("LightShadow"))
+                    .frame(width: geo.size.width/1.1)
+            }.frame(height: geo.size.height)
+        }
+    }
+    
+    @State var helperActive = false
+    var helperButton: some View {
+        GeometryReader { geo in
+            VStack {
+                NavigationLink(destination: Helper(), isActive: self.$helperActive) {EmptyView()}
+                Button(action: {self.helperActive.toggle()},
+                       label: {Text("Helper")})
+                .softButtonStyle(RoundedRectangle(cornerRadius: 10), mainColor: Color("Background"), textColor: Color.black, darkShadowColor: Color("DarkShadow"), lightShadowColor: Color("LightShadow"))
+                    .frame(width: geo.size.width/1.1)
+            }
+        }
+    }
+    
+    func removeDeck(at offsets: IndexSet) {
+        for index in offsets {
+            let deck = decks[index]
+            managedObjectContext.delete(deck)
+        }
+        do {
+            try managedObjectContext.save()
+            
+        } catch {
+            // handle the Core Data error
+        }
+    }
 }
+
+struct deckView: View {
+    @State var deck: Deck
+    var body: some View {
+        HStack(spacing: 10) {
+            ZStack {
+                RoundedRectangle(cornerRadius: 15).fill(Color(.white)).modifier(Neumorphic())
+                Text(deck.wrappedName).font(.caption)
+            }.frame(width: 72, height: 120)
+            Text("Number of Verbs: \(deck.verbsToPractice.count)")
+        }
+    }
+}
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

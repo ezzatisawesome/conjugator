@@ -8,12 +8,20 @@
 
 import Foundation
 
-struct Question {
+struct Question: Hashable {
     
     let infinitive: String // infinitive form of verb
     let tense: Tense // tense of verb
     let form: Form // form of verb
     let conjugated: String // final conjugated form of verb
+    var userAnswer: String?
+    
+    var wrappedUserAnswer: String {
+        if userAnswer == "" {
+            return "Unanswered"
+        }
+        return userAnswer ?? "Unanswered"
+    }
     
     // Blank initializer
     init() {
@@ -35,5 +43,9 @@ struct Question {
     
     func checkCorrect(ans: String) -> Bool {
         return ans == self.conjugated
+    }
+    
+    mutating func setUserAnswer(ans: String) -> Void {
+        self.userAnswer = ans
     }
 }

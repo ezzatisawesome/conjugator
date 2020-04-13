@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19D76" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="PracticeSet" representedClassName="PracticeSet" syncable="YES">
+    <entity name="Deck" representedClassName="Deck" syncable="YES">
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="impAffirmative" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="impNegative" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
@@ -9,9 +9,9 @@
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="subImperfect" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="subPresent" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
-        <attribute name="verbsToPractice" optional="YES" attributeType="Transformable"/>
+        <attribute name="verbsToPractice" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromData"/>
     </entity>
     <elements>
-        <element name="PracticeSet" positionX="-45" positionY="0" width="128" height="178"/>
+        <element name="Deck" positionX="-36" positionY="81" width="128" height="178"/>
     </elements>
 </model>

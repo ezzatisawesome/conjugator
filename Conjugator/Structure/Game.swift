@@ -161,6 +161,15 @@ class Game: ObservableObject {
         return (self.questionList.count == 0)
     }
     
+    func clearGame() {
+        self.verbsToPractice = []
+        self.questionList = []
+        self.questionsAnswered = []
+        self.questionsCorrect = []
+        self.questionsWrong = []
+        
+    }
+    
     // returns the percentage of questionsCorrect count vs questionsAnswered count
     func getScore() -> String {
         let myDouble =  Double(self.questionsCorrect.count) / Double(self.questionsAnswered.count) * 100

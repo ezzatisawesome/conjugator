@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC0544C7244113F300D1368E /* Deck+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0544C5244113F300D1368E /* Deck+CoreDataClass.swift */; };
+		EC0544C8244113F300D1368E /* Deck+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0544C6244113F300D1368E /* Deck+CoreDataProperties.swift */; };
+		EC0544CB2441169D00D1368E /* Conjugator.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EC2B9E6C24377BFD008D705C /* Conjugator.xcdatamodeld */; };
+		EC0B1B14243994E60077D700 /* backup.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0B1B13243994E60077D700 /* backup.swift */; };
+		EC0B1B1624399C7F0077D700 /* GameDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0B1B1524399C7F0077D700 /* GameDetails.swift */; };
 		EC2B9E6924377BFD008D705C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2B9E6824377BFD008D705C /* AppDelegate.swift */; };
-		EC2B9E6B24377BFD008D705C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2B9E6A24377BFD008D705C /* SceneDelegate.swift */; };
-		EC2B9E6E24377BFD008D705C /* Conjugator.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EC2B9E6C24377BFD008D705C /* Conjugator.xcdatamodeld */; };
-		EC2B9E7024377BFD008D705C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2B9E6F24377BFD008D705C /* ContentView.swift */; };
 		EC2B9E7224377BFF008D705C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC2B9E7124377BFF008D705C /* Assets.xcassets */; };
 		EC2B9E7524377BFF008D705C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC2B9E7424377BFF008D705C /* Preview Assets.xcassets */; };
 		EC2B9E7824377BFF008D705C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC2B9E7624377BFF008D705C /* LaunchScreen.storyboard */; };
@@ -22,17 +24,15 @@
 		EC2B9EAC24378156008D705C /* CSV in Frameworks */ = {isa = PBXBuildFile; productRef = EC2B9EAB24378156008D705C /* CSV */; };
 		EC2B9EAE24378163008D705C /* CSVParse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2B9EAD24378163008D705C /* CSVParse.swift */; };
 		EC2B9EB02437818E008D705C /* verb_database.csv in Resources */ = {isa = PBXBuildFile; fileRef = EC2B9EAF2437818E008D705C /* verb_database.csv */; };
-		EC2B9EB92437885C008D705C /* PracticeSet+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2B9EB72437885C008D705C /* PracticeSet+CoreDataClass.swift */; };
-		EC2B9EBA2437885C008D705C /* PracticeSet+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2B9EB82437885C008D705C /* PracticeSet+CoreDataProperties.swift */; };
 		EC2B9EC324378D21008D705C /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2B9EBD24378D21008D705C /* Dictionary.swift */; };
 		EC2B9EC424378D21008D705C /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2B9EBE24378D21008D705C /* Helper.swift */; };
-		ECA8F1032439516500C1BD73 /* testDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA8F1022439516500C1BD73 /* testDictionary.swift */; };
-		ECB01E7C2437B3200072324D /* PracticeSetList.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB01E7B2437B3200072324D /* PracticeSetList.swift */; };
-		ECB01E822437D50D0072324D /* NewPracticeSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB01E812437D50D0072324D /* NewPracticeSet.swift */; };
+		ECA8F11424397D7700C1BD73 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2B9E6A24377BFD008D705C /* SceneDelegate.swift */; };
+		ECA8F11524397D8000C1BD73 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2B9E6F24377BFD008D705C /* ContentView.swift */; };
+		ECB01E822437D50D0072324D /* NewDeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB01E812437D50D0072324D /* NewDeckView.swift */; };
 		ECB01E862437DD7A0072324D /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB01E852437DD7A0072324D /* Game.swift */; };
 		ECB01E882437DFA10072324D /* GameSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB01E872437DFA10072324D /* GameSetup.swift */; };
-		ECB01E8A2437E5DD0072324D /* PracticeSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB01E892437E5DD0072324D /* PracticeSession.swift */; };
-		ECB01E8E2437EF640072324D /* SessionEnd.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB01E8D2437EF640072324D /* SessionEnd.swift */; };
+		ECB01E8A2437E5DD0072324D /* GameSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB01E892437E5DD0072324D /* GameSession.swift */; };
+		ECB01E8E2437EF640072324D /* GameEnd.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB01E8D2437EF640072324D /* GameEnd.swift */; };
 		ECB01E902437FE1F0072324D /* testDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB01E8F2437FE1F0072324D /* testDesign.swift */; };
 		ECB01E95243805CC0072324D /* Neumorphic in Frameworks */ = {isa = PBXBuildFile; productRef = ECB01E94243805CC0072324D /* Neumorphic */; };
 		ECB01E97243818580072324D /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB01E96243818580072324D /* Background.swift */; };
@@ -56,6 +56,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EC0544C5244113F300D1368E /* Deck+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Deck+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		EC0544C6244113F300D1368E /* Deck+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Deck+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		EC0B1B13243994E60077D700 /* backup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = backup.swift; sourceTree = "<group>"; };
+		EC0B1B1524399C7F0077D700 /* GameDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetails.swift; sourceTree = "<group>"; };
 		EC2B9E6524377BFD008D705C /* Conjugator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Conjugator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC2B9E6824377BFD008D705C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EC2B9E6A24377BFD008D705C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,17 +80,13 @@
 		EC2B9EA824377F2C008D705C /* ConjugationTenseForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConjugationTenseForm.swift; sourceTree = "<group>"; };
 		EC2B9EAD24378163008D705C /* CSVParse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVParse.swift; sourceTree = "<group>"; };
 		EC2B9EAF2437818E008D705C /* verb_database.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = verb_database.csv; sourceTree = "<group>"; };
-		EC2B9EB72437885C008D705C /* PracticeSet+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PracticeSet+CoreDataClass.swift"; sourceTree = "<group>"; };
-		EC2B9EB82437885C008D705C /* PracticeSet+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PracticeSet+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		EC2B9EBD24378D21008D705C /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
 		EC2B9EBE24378D21008D705C /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
-		ECA8F1022439516500C1BD73 /* testDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testDictionary.swift; sourceTree = "<group>"; };
-		ECB01E7B2437B3200072324D /* PracticeSetList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeSetList.swift; sourceTree = "<group>"; };
-		ECB01E812437D50D0072324D /* NewPracticeSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPracticeSet.swift; sourceTree = "<group>"; };
+		ECB01E812437D50D0072324D /* NewDeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDeckView.swift; sourceTree = "<group>"; };
 		ECB01E852437DD7A0072324D /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		ECB01E872437DFA10072324D /* GameSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSetup.swift; sourceTree = "<group>"; };
-		ECB01E892437E5DD0072324D /* PracticeSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeSession.swift; sourceTree = "<group>"; };
-		ECB01E8D2437EF640072324D /* SessionEnd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionEnd.swift; sourceTree = "<group>"; };
+		ECB01E892437E5DD0072324D /* GameSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSession.swift; sourceTree = "<group>"; };
+		ECB01E8D2437EF640072324D /* GameEnd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEnd.swift; sourceTree = "<group>"; };
 		ECB01E8F2437FE1F0072324D /* testDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testDesign.swift; sourceTree = "<group>"; };
 		ECB01E96243818580072324D /* Background.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -187,8 +187,8 @@
 				EC2B9EA324377DC7008D705C /* Verb.swift */,
 				EC2B9EA124377DA8008D705C /* Question.swift */,
 				ECB01E852437DD7A0072324D /* Game.swift */,
-				EC2B9EB72437885C008D705C /* PracticeSet+CoreDataClass.swift */,
-				EC2B9EB82437885C008D705C /* PracticeSet+CoreDataProperties.swift */,
+				EC0544C5244113F300D1368E /* Deck+CoreDataClass.swift */,
+				EC0544C6244113F300D1368E /* Deck+CoreDataProperties.swift */,
 			);
 			path = Structure;
 			sourceTree = "<group>";
@@ -208,15 +208,15 @@
 			children = (
 				ECB01E98243818640072324D /* Modifiers */,
 				EC2B9E6F24377BFD008D705C /* ContentView.swift */,
-				ECB01E7B2437B3200072324D /* PracticeSetList.swift */,
-				ECB01E812437D50D0072324D /* NewPracticeSet.swift */,
-				ECB01E892437E5DD0072324D /* PracticeSession.swift */,
-				ECB01E8D2437EF640072324D /* SessionEnd.swift */,
+				ECB01E812437D50D0072324D /* NewDeckView.swift */,
+				EC0B1B1524399C7F0077D700 /* GameDetails.swift */,
 				ECB01E872437DFA10072324D /* GameSetup.swift */,
+				ECB01E892437E5DD0072324D /* GameSession.swift */,
+				ECB01E8D2437EF640072324D /* GameEnd.swift */,
 				EC2B9EBD24378D21008D705C /* Dictionary.swift */,
 				EC2B9EBE24378D21008D705C /* Helper.swift */,
 				ECB01E8F2437FE1F0072324D /* testDesign.swift */,
-				ECA8F1022439516500C1BD73 /* testDictionary.swift */,
+				EC0B1B13243994E60077D700 /* backup.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -369,24 +369,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC0544CB2441169D00D1368E /* Conjugator.xcdatamodeld in Sources */,
+				EC0544C8244113F300D1368E /* Deck+CoreDataProperties.swift in Sources */,
+				EC0B1B14243994E60077D700 /* backup.swift in Sources */,
+				ECA8F11524397D8000C1BD73 /* ContentView.swift in Sources */,
+				ECA8F11424397D7700C1BD73 /* SceneDelegate.swift in Sources */,
 				EC2B9E6924377BFD008D705C /* AppDelegate.swift in Sources */,
-				ECB01E822437D50D0072324D /* NewPracticeSet.swift in Sources */,
-				EC2B9EBA2437885C008D705C /* PracticeSet+CoreDataProperties.swift in Sources */,
-				EC2B9E6E24377BFD008D705C /* Conjugator.xcdatamodeld in Sources */,
-				EC2B9E7024377BFD008D705C /* ContentView.swift in Sources */,
+				ECB01E822437D50D0072324D /* NewDeckView.swift in Sources */,
+				EC0544C7244113F300D1368E /* Deck+CoreDataClass.swift in Sources */,
 				ECB01E882437DFA10072324D /* GameSetup.swift in Sources */,
 				EC2B9EC324378D21008D705C /* Dictionary.swift in Sources */,
 				EC2B9EA424377DC7008D705C /* Verb.swift in Sources */,
 				EC2B9EA224377DA8008D705C /* Question.swift in Sources */,
-				EC2B9E6B24377BFD008D705C /* SceneDelegate.swift in Sources */,
-				ECB01E8A2437E5DD0072324D /* PracticeSession.swift in Sources */,
+				EC0B1B1624399C7F0077D700 /* GameDetails.swift in Sources */,
+				ECB01E8A2437E5DD0072324D /* GameSession.swift in Sources */,
 				EC2B9EA924377F2C008D705C /* ConjugationTenseForm.swift in Sources */,
 				ECB01E902437FE1F0072324D /* testDesign.swift in Sources */,
-				ECB01E8E2437EF640072324D /* SessionEnd.swift in Sources */,
+				ECB01E8E2437EF640072324D /* GameEnd.swift in Sources */,
 				EC2B9EC424378D21008D705C /* Helper.swift in Sources */,
-				EC2B9EB92437885C008D705C /* PracticeSet+CoreDataClass.swift in Sources */,
-				ECB01E7C2437B3200072324D /* PracticeSetList.swift in Sources */,
-				ECA8F1032439516500C1BD73 /* testDictionary.swift in Sources */,
 				EC2B9EAE24378163008D705C /* CSVParse.swift in Sources */,
 				ECB01E862437DD7A0072324D /* Game.swift in Sources */,
 				ECB01E97243818580072324D /* Background.swift in Sources */,

@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct NewPracticeSet: View {
+struct NewDeckView: View {
     @Environment(\.managedObjectContext) var managedObjectContext
     @Environment (\.presentationMode) var presentationMode
     
@@ -22,11 +22,12 @@ struct NewPracticeSet: View {
     @State var subImperfect: Bool = false
     @State var impAffirmative: Bool = false
     @State var impNegative: Bool = false
+    //@State var groupChoice: Group?
     
     @State var isActive: Bool = false // for the Create button
     
     func upload() {
-        let newSet = PracticeSet(context: self.managedObjectContext)
+        let newSet = Deck(context: self.managedObjectContext)
         let verbsArray = verbsToPractice.components(separatedBy: ",")
         
         newSet.name = self.name
@@ -37,12 +38,28 @@ struct NewPracticeSet: View {
         newSet.subImperfect = self.subImperfect
         newSet.impAffirmative = self.impAffirmative
         newSet.impNegative = self.impNegative
+        //newSet.group = self.groupChoice
         newSet.id = UUID()
+        
+        do {
+            try self.managedObjectContext.save()
+            print("Order saved.")
+            self.presentationMode.wrappedValue.dismiss()
+        } catch {
+            print(error.localizedDescription)
+        }
     }
     
     var body: some View {
         ScrollView {
                 VStack {
+                    /*
+                    Picker("Group", selection: self.$groupChoice) {
+                        ForEach(self.groups) { group in
+                            Text(group.name).tag(group)
+                        }
+                    }.pickerStyle(WheelPickerStyle())
+                    */
                     TextField("Untitled Set", text: self.$name)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
@@ -92,7 +109,8 @@ struct NewPracticeSet: View {
                                 Text(verb.name)
                             }
                         }
-                    }.scaledToFit()
+                    }.cornerRadius(20)
+                    .scaledToFit()
                     .listStyle(GroupedListStyle())
                     .environment(\.horizontalSizeClass, .regular)
                     
@@ -104,13 +122,6 @@ struct NewPracticeSet: View {
                     Button(
                         action: {
                             self.upload()
-                            do {
-                                try self.managedObjectContext.save()
-                                print("Order saved.")
-                                self.presentationMode.wrappedValue.dismiss()
-                            } catch {
-                                print(error.localizedDescription)
-                            }
                         },
                         label: {Text("Enter")}
                     )
@@ -123,6 +134,6 @@ struct NewPracticeSet: View {
 
 struct NewSetSetup_Previews: PreviewProvider {
     static var previews: some View {
-        NewPracticeSet()
+        NewDeckView()
     }
 }

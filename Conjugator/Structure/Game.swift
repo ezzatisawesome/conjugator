@@ -57,6 +57,7 @@ class Game: ObservableObject {
     
     // setsVerbsToPractice by taking in comma separated string and splitting into an array
     func setVerbsToPractice(verbs: [String]) -> Void {
+        
         self.verbsToPractice = verbs
     }
     

@@ -24,7 +24,7 @@ struct ContentView: View {
             GeometryReader{geometry in
                 HStack {
                     VStack(alignment: .leading, spacing: geometry.size.height/22) {
-                        self.title
+                        self.title.padding()
                         self.dictionaryButton.frame(height: geometry.size.height/20)
                         self.helperButton.frame(height: geometry.size.height/20)
                         Spacer()

@@ -10,7 +10,6 @@
 		EC0544C7244113F300D1368E /* Deck+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0544C5244113F300D1368E /* Deck+CoreDataClass.swift */; };
 		EC0544C8244113F300D1368E /* Deck+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0544C6244113F300D1368E /* Deck+CoreDataProperties.swift */; };
 		EC0544CB2441169D00D1368E /* Conjugator.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EC2B9E6C24377BFD008D705C /* Conjugator.xcdatamodeld */; };
-		EC0B1B14243994E60077D700 /* backup.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0B1B13243994E60077D700 /* backup.swift */; };
 		EC0B1B1624399C7F0077D700 /* GameDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0B1B1524399C7F0077D700 /* GameDetails.swift */; };
 		EC2B9E6924377BFD008D705C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2B9E6824377BFD008D705C /* AppDelegate.swift */; };
 		EC2B9E7224377BFF008D705C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC2B9E7124377BFF008D705C /* Assets.xcassets */; };
@@ -58,7 +57,6 @@
 /* Begin PBXFileReference section */
 		EC0544C5244113F300D1368E /* Deck+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Deck+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		EC0544C6244113F300D1368E /* Deck+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Deck+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
-		EC0B1B13243994E60077D700 /* backup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = backup.swift; sourceTree = "<group>"; };
 		EC0B1B1524399C7F0077D700 /* GameDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetails.swift; sourceTree = "<group>"; };
 		EC2B9E6524377BFD008D705C /* Conjugator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Conjugator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC2B9E6824377BFD008D705C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -216,7 +214,6 @@
 				EC2B9EBD24378D21008D705C /* Dictionary.swift */,
 				EC2B9EBE24378D21008D705C /* Helper.swift */,
 				ECB01E8F2437FE1F0072324D /* testDesign.swift */,
-				EC0B1B13243994E60077D700 /* backup.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -371,7 +368,6 @@
 			files = (
 				EC0544CB2441169D00D1368E /* Conjugator.xcdatamodeld in Sources */,
 				EC0544C8244113F300D1368E /* Deck+CoreDataProperties.swift in Sources */,
-				EC0B1B14243994E60077D700 /* backup.swift in Sources */,
 				ECA8F11524397D8000C1BD73 /* ContentView.swift in Sources */,
 				ECA8F11424397D7700C1BD73 /* SceneDelegate.swift in Sources */,
 				EC2B9E6924377BFD008D705C /* AppDelegate.swift in Sources */,

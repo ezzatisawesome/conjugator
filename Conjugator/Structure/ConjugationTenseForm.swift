@@ -29,12 +29,14 @@ enum Tense: String {
     case indicativePastPerfect = "Indicative Past Perfect"
     case indicativePreteriteArchaic = "Indicative Preterite Archaic"
     case indicativeConditionalPerfect = "Indicative Conditional Perfect"
+    
     case subjunctivePresent = "Subjunctive Present"
     case subjunctiveImperfect = "Subjunctive Imperfect"
     case subjunctiveFuture = "Subjunctive Future"
     case subjunctivePresentPerfect = "Subjunctive Present Perfect"
     case subjunctiveFuturePerfect = "Subjunctive Future Perfect"
     case subjunctivePastPerfect = "Subjunctive Past Perfect"
+    
     case imperativeAffirmative = "Imperative Affirmative"
     case imperativeNegative = "Imperative Negative"
 }

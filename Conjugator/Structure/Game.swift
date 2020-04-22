@@ -62,11 +62,25 @@ class Game: ObservableObject {
     }
     
     // sets user preference of tenses
-    func setTenses(indPresent: Bool, indPreterite: Bool, subPresent: Bool, subImperfect: Bool, impAffirmative: Bool, impNegative: Bool) -> Void {
+    func setTenses(indPresent: Bool, indPreterite: Bool, indFuture: Bool, indImperfect: Bool, indConditional: Bool, indPresentPerfect: Bool, indFuturePerfect: Bool, indPastPerfect: Bool, indPreteriteArchaic: Bool, indConditionalPerfect: Bool, subPresent: Bool, subImperfect: Bool, subFuture: Bool, subPresentPerfect: Bool, subFuturePerfect: Bool, subPastPerfect: Bool, impAffirmative: Bool, impNegative: Bool) -> Void {
         self.indPresent = indPresent
         self.indPreterite = indPreterite
+        self.indFuture = indFuture
+        self.indImperfect = indImperfect
+        self.indConditional = indConditional
+        self.indPresentPerfect = indPresentPerfect
+        self.indFuturePerfect = indFuturePerfect
+        self.indPastPerfect = indPastPerfect
+        self.indPreteriteArchaic = indPreteriteArchaic
+        self.indConditionalPerfect = indConditionalPerfect
+        
         self.subPresent = subPresent
         self.subImperfect = subImperfect
+        self.subFuture = subFuture
+        self.subPresentPerfect = subPresentPerfect
+        self.subFuturePerfect = subFuturePerfect
+        self.subPastPerfect = subPastPerfect
+        
         self.imperativeAffirmative = impAffirmative
         self.imperativeNegative = impNegative
     }
@@ -78,52 +92,401 @@ class Game: ObservableObject {
             let curVerb = verbData[pos]
             
             if(indPresent) {
-                questionList.append(Question(infinitive: curVerb.name, tense: .indicativePresent, form: .s1))
-                questionList.append(Question(infinitive: curVerb.name, tense: .indicativePresent, form: .s2))
-                questionList.append(Question(infinitive: curVerb.name, tense: .indicativePresent, form: .s3))
-                questionList.append(Question(infinitive: curVerb.name, tense: .indicativePresent, form: .p1))
-                questionList.append(Question(infinitive: curVerb.name, tense: .indicativePresent, form: .p2))
-                questionList.append(Question(infinitive: curVerb.name, tense: .indicativePresent, form: .p3))
+                if(Question(infinitive: curVerb.name, tense: .indicativePresent, form: .s1).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .indicativePresent, form: .s1))
+                }
+                if(Question(infinitive: curVerb.name, tense: .indicativePresent, form: .s2).conjugated != ""){
+                    questionList.append(Question(infinitive: curVerb.name, tense: .indicativePresent, form: .s2))
+                }
+                if(Question(infinitive: curVerb.name, tense: .indicativePresent, form: .s3).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .indicativePresent, form: .s3))
+                }
+                if(Question(infinitive: curVerb.name, tense: .indicativePresent, form: .p1).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .indicativePresent, form: .p1))
+                }
+                if(Question(infinitive: curVerb.name, tense: .indicativePresent, form: .p2).conjugated != ""){
+                    questionList.append(Question(infinitive: curVerb.name, tense: .indicativePresent, form: .p2))
+                }
+                if(Question(infinitive: curVerb.name, tense: .indicativePresent, form: .p3).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .indicativePresent, form: .p3))
+                }
             }
             if(indPreterite) {
-                questionList.append(Question(infinitive: curVerb.name, tense: .indicativePreterite, form: .s1))
-                questionList.append(Question(infinitive: curVerb.name, tense: .indicativePreterite, form: .s2))
-                questionList.append(Question(infinitive: curVerb.name, tense: .indicativePreterite, form: .s3))
-                questionList.append(Question(infinitive: curVerb.name, tense: .indicativePreterite, form: .p1))
-                questionList.append(Question(infinitive: curVerb.name, tense: .indicativePreterite, form: .p2))
-                questionList.append(Question(infinitive: curVerb.name, tense: .indicativePreterite, form: .p3))
+                if(Question(infinitive: curVerb.name, tense: .indicativePreterite, form: .s1).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .indicativePreterite, form: .s1))
+                }
+                if(Question(infinitive: curVerb.name, tense: .indicativePreterite, form: .s2).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .indicativePreterite, form: .s2))
+                }
+                if(Question(infinitive: curVerb.name, tense: .indicativePreterite, form: .s3).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .indicativePreterite, form: .s3))
+                }
+                if(Question(infinitive: curVerb.name, tense: .indicativePreterite, form: .p1).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .indicativePreterite, form: .p1))
+                }
+                if(Question(infinitive: curVerb.name, tense: .indicativePreterite, form: .p2).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .indicativePreterite, form: .p2))
+                }
+                if(Question(infinitive: curVerb.name, tense: .indicativePreterite, form: .p3).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .indicativePreterite, form: .p3))
+                }
             }
+            
+            if(indFuture) {
+                if(Question(infinitive: curVerb.name, tense: .indicativeFuture, form: .s1).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .indicativeFuture, form: .s1))
+                }
+                if(Question(infinitive: curVerb.name, tense: .indicativeFuture, form: .s2).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .indicativeFuture, form: .s2))
+                }
+                if(Question(infinitive: curVerb.name, tense: .indicativeFuture, form: .s3).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .indicativeFuture, form: .s3))
+                }
+                if(Question(infinitive: curVerb.name, tense: .indicativeFuture, form: .p1).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .indicativeFuture, form: .p1))
+                }
+                if(Question(infinitive: curVerb.name, tense: .indicativeFuture, form: .p2).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .indicativeFuture, form: .p2))
+                }
+                if(Question(infinitive: curVerb.name, tense: .indicativeFuture, form: .p3).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .indicativeFuture, form: .p3))
+                }
+            }
+            
+            if(indImperfect) {
+                if(Question(infinitive: curVerb.name, tense: .indicativeImperfect, form: .s1).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .indicativeImperfect, form: .s1))
+                }
+                if(Question(infinitive: curVerb.name, tense: .indicativeImperfect, form: .s2).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .indicativeImperfect, form: .s2))
+                }
+                if(Question(infinitive: curVerb.name, tense: .indicativeImperfect, form: .s3).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .indicativeImperfect, form: .s3))
+                }
+                if(Question(infinitive: curVerb.name, tense: .indicativeImperfect, form: .p1).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .indicativeImperfect, form: .p1))
+                }
+                if(Question(infinitive: curVerb.name, tense: .indicativeImperfect, form: .p2).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .indicativeImperfect, form: .p2))
+                }
+                if(Question(infinitive: curVerb.name, tense: .indicativeImperfect, form: .p3).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .indicativeImperfect, form: .p3))
+                }
+            }
+            
+            if(indConditional) {
+                if(Question(infinitive: curVerb.name, tense: .indicativeConditional, form: .s1).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .indicativeConditional, form: .s1))
+                }
+                if(Question(infinitive: curVerb.name, tense: .indicativeConditional, form: .s2).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .indicativeConditional, form: .s2))
+                }
+                if(Question(infinitive: curVerb.name, tense: .indicativeConditional, form: .s3).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .indicativeConditional, form: .s3))
+                }
+                if(Question(infinitive: curVerb.name, tense: .indicativeConditional, form: .p1).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .indicativeConditional, form: .p1))
+                }
+                if(Question(infinitive: curVerb.name, tense: .indicativeConditional, form: .p2).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .indicativeConditional, form: .p2))
+                }
+                if(Question(infinitive: curVerb.name, tense: .indicativeConditional, form: .p3).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .indicativeConditional, form: .p3))
+                }
+            }
+            
+            if(indPresentPerfect) {
+                if(Question(infinitive: curVerb.name, tense: .indicativePresentPerfect, form: .s1).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .indicativePresentPerfect, form: .s1))
+                }
+                if(Question(infinitive: curVerb.name, tense: .indicativePresentPerfect, form: .s2).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .indicativePresentPerfect, form: .s2))
+                }
+                if(Question(infinitive: curVerb.name, tense: .indicativePresentPerfect, form: .s3).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .indicativePresentPerfect, form: .s3))
+                }
+                if(Question(infinitive: curVerb.name, tense: .indicativePresentPerfect, form: .p1).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .indicativePresentPerfect, form: .p1))
+                }
+                if(Question(infinitive: curVerb.name, tense: .indicativePresentPerfect, form: .p2).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .indicativePresentPerfect, form: .p2))
+                }
+                if(Question(infinitive: curVerb.name, tense: .indicativePresentPerfect, form: .p3).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .indicativePresentPerfect, form: .p3))
+                }
+            }
+            
+            if(indFuturePerfect) {
+                if(Question(infinitive: curVerb.name, tense: .indicativeFuturePerfect, form: .s1).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .indicativeFuturePerfect, form: .s1))
+                }
+                if(Question(infinitive: curVerb.name, tense: .indicativeFuturePerfect, form: .s2).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .indicativeFuturePerfect, form: .s2))
+                }
+                if(Question(infinitive: curVerb.name, tense: .indicativeFuturePerfect, form: .s3).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .indicativeFuturePerfect, form: .s3))
+                }
+                if(Question(infinitive: curVerb.name, tense: .indicativeFuturePerfect, form: .p1).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .indicativeFuturePerfect, form: .p1))
+                }
+                if(Question(infinitive: curVerb.name, tense: .indicativeFuturePerfect, form: .p2).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .indicativeFuturePerfect, form: .p2))
+                }
+                if(Question(infinitive: curVerb.name, tense: .indicativeFuturePerfect, form: .p3).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .indicativeFuturePerfect, form: .p3))
+                }
+            }
+            
+            if(indFuturePerfect) {
+                if(Question(infinitive: curVerb.name, tense: .indicativeFuturePerfect, form: .s1).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .indicativeFuturePerfect, form: .s1))
+                }
+                if(Question(infinitive: curVerb.name, tense: .indicativeFuturePerfect, form: .s2).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .indicativeFuturePerfect, form: .s2))
+                }
+                if(Question(infinitive: curVerb.name, tense: .indicativeFuturePerfect, form: .s3).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .indicativeFuturePerfect, form: .s3))
+                }
+                if(Question(infinitive: curVerb.name, tense: .indicativeFuturePerfect, form: .p1).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .indicativeFuturePerfect, form: .p1))
+                }
+                if(Question(infinitive: curVerb.name, tense: .indicativeFuturePerfect, form: .p2).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .indicativeFuturePerfect, form: .p2))
+                }
+                if(Question(infinitive: curVerb.name, tense: .indicativeFuturePerfect, form: .p3).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .indicativeFuturePerfect, form: .p3))
+                }
+            }
+            
+            if(indPastPerfect) {
+                if(Question(infinitive: curVerb.name, tense: .indicativePastPerfect, form: .s1).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .indicativePastPerfect, form: .s1))
+                }
+                if(Question(infinitive: curVerb.name, tense: .indicativePastPerfect, form: .s2).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .indicativePastPerfect, form: .s2))
+                }
+                if(Question(infinitive: curVerb.name, tense: .indicativePastPerfect, form: .s3).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .indicativePastPerfect, form: .s3))
+                }
+                if(Question(infinitive: curVerb.name, tense: .indicativePastPerfect, form: .p1).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .indicativePastPerfect, form: .p1))
+                }
+                if(Question(infinitive: curVerb.name, tense: .indicativePastPerfect, form: .p2).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .indicativePastPerfect, form: .p2))
+                }
+                if(Question(infinitive: curVerb.name, tense: .indicativePastPerfect, form: .p3).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .indicativePastPerfect, form: .p3))
+                }
+            }
+            
+            if(indPreteriteArchaic) {
+                if(Question(infinitive: curVerb.name, tense: .indicativePreteriteArchaic, form: .s1).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .indicativePreteriteArchaic, form: .s1))
+                }
+                if(Question(infinitive: curVerb.name, tense: .indicativePreteriteArchaic, form: .s2).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .indicativePreteriteArchaic, form: .s2))
+                }
+                if(Question(infinitive: curVerb.name, tense: .indicativePreteriteArchaic, form: .s3).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .indicativePreteriteArchaic, form: .s3))
+                }
+                if(Question(infinitive: curVerb.name, tense: .indicativePreteriteArchaic, form: .p1).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .indicativePreteriteArchaic, form: .p1))
+                }
+                if(Question(infinitive: curVerb.name, tense: .indicativePreteriteArchaic, form: .p2).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .indicativePreteriteArchaic, form: .p2))
+                }
+                if(Question(infinitive: curVerb.name, tense: .indicativePreteriteArchaic, form: .p3).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .indicativePreteriteArchaic, form: .p3))
+                }
+            }
+            
+            if(indConditionalPerfect) {
+                if(Question(infinitive: curVerb.name, tense: .indicativeConditionalPerfect, form: .s1).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .indicativeConditionalPerfect, form: .s1))
+                }
+                if(Question(infinitive: curVerb.name, tense: .indicativeConditionalPerfect, form: .s2).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .indicativeConditionalPerfect, form: .s2))
+                }
+                if(Question(infinitive: curVerb.name, tense: .indicativeConditionalPerfect, form: .s3).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .indicativeConditionalPerfect, form: .s3))
+                }
+                if(Question(infinitive: curVerb.name, tense: .indicativeConditionalPerfect, form: .p1).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .indicativeConditionalPerfect, form: .p1))
+                }
+                if(Question(infinitive: curVerb.name, tense: .indicativeConditionalPerfect, form: .p2).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .indicativeConditionalPerfect, form: .p2))
+                }
+                if(Question(infinitive: curVerb.name, tense: .indicativeConditionalPerfect, form: .p3).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .indicativeConditionalPerfect, form: .p3))
+                }
+            }
+            
             if(subPresent) {
-                questionList.append(Question(infinitive: curVerb.name, tense: .subjunctivePresent, form: .s1))
-                questionList.append(Question(infinitive: curVerb.name, tense: .subjunctivePresent, form: .s2))
-                questionList.append(Question(infinitive: curVerb.name, tense: .subjunctivePresent, form: .s3))
-                questionList.append(Question(infinitive: curVerb.name, tense: .subjunctivePresent, form: .p1))
-                questionList.append(Question(infinitive: curVerb.name, tense: .subjunctivePresent, form: .p2))
-                questionList.append(Question(infinitive: curVerb.name, tense: .subjunctivePresent, form: .p3))
+                if(Question(infinitive: curVerb.name, tense: .subjunctivePresent, form: .s1).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .subjunctivePresent, form: .s1))
+                }
+                if(Question(infinitive: curVerb.name, tense: .subjunctivePresent, form: .s2).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .subjunctivePresent, form: .s2))
+                }
+                if(Question(infinitive: curVerb.name, tense: .subjunctivePresent, form: .s3).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .subjunctivePresent, form: .s3))
+                }
+                if(Question(infinitive: curVerb.name, tense: .subjunctivePresent, form: .p1).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .subjunctivePresent, form: .p1))
+                }
+                if(Question(infinitive: curVerb.name, tense: .subjunctivePresent, form: .p2).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .subjunctivePresent, form: .p2))
+                }
+                if(Question(infinitive: curVerb.name, tense: .subjunctivePresent, form: .p3).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .subjunctivePresent, form: .p3))
+                }
             }
+            
             if(subImperfect) {
-                questionList.append(Question(infinitive: curVerb.name, tense: .subjunctiveImperfect, form: .s1))
-                questionList.append(Question(infinitive: curVerb.name, tense: .subjunctiveImperfect, form: .s2))
-                questionList.append(Question(infinitive: curVerb.name, tense: .subjunctiveImperfect, form: .s3))
-                questionList.append(Question(infinitive: curVerb.name, tense: .subjunctiveImperfect, form: .p1))
-                questionList.append(Question(infinitive: curVerb.name, tense: .subjunctiveImperfect, form: .p2))
-                questionList.append(Question(infinitive: curVerb.name, tense: .subjunctiveImperfect, form: .p3))
+                if(Question(infinitive: curVerb.name, tense: .subjunctiveImperfect, form: .s1).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .subjunctiveImperfect, form: .s1))
+                }
+                if(Question(infinitive: curVerb.name, tense: .subjunctiveImperfect, form: .s2).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .subjunctiveImperfect, form: .s2))
+                }
+                if(Question(infinitive: curVerb.name, tense: .subjunctiveImperfect, form: .s3).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .subjunctiveImperfect, form: .s3))
+                }
+                if(Question(infinitive: curVerb.name, tense: .subjunctiveImperfect, form: .p1).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .subjunctiveImperfect, form: .p1))
+                }
+                if(Question(infinitive: curVerb.name, tense: .subjunctiveImperfect, form: .p2).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .subjunctiveImperfect, form: .p2))
+                }
+                if(Question(infinitive: curVerb.name, tense: .subjunctiveImperfect, form: .p3).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .subjunctiveImperfect, form: .p3))
+                }
             }
+            
+            if(subFuture) {
+                if(Question(infinitive: curVerb.name, tense: .subjunctiveFuture, form: .s1).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .subjunctiveFuture, form: .s1))
+                }
+                if(Question(infinitive: curVerb.name, tense: .subjunctiveFuture, form: .s2).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .subjunctiveFuture, form: .s2))
+                }
+                if(Question(infinitive: curVerb.name, tense: .subjunctiveFuture, form: .s3).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .subjunctiveFuture, form: .s3))
+                }
+                if(Question(infinitive: curVerb.name, tense: .subjunctiveFuture, form: .p1).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .subjunctiveFuture, form: .p1))
+                }
+                if(Question(infinitive: curVerb.name, tense: .subjunctiveFuture, form: .p2).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .subjunctiveFuture, form: .p2))
+                }
+                if(Question(infinitive: curVerb.name, tense: .subjunctiveFuture, form: .p3).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .subjunctiveFuture, form: .p3))
+                }
+            }
+            
+            if(subPresentPerfect) {
+                if(Question(infinitive: curVerb.name, tense: .subjunctivePresentPerfect, form: .s1).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .subjunctivePresentPerfect, form: .s1))
+                }
+                if(Question(infinitive: curVerb.name, tense: .subjunctivePresentPerfect, form: .s2).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .subjunctivePresentPerfect, form: .s2))
+                }
+                if(Question(infinitive: curVerb.name, tense: .subjunctivePresentPerfect, form: .s3).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .subjunctivePresentPerfect, form: .s3))
+                }
+                if(Question(infinitive: curVerb.name, tense: .subjunctivePresentPerfect, form: .p1).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .subjunctivePresentPerfect, form: .p1))
+                }
+                if(Question(infinitive: curVerb.name, tense: .subjunctivePresentPerfect, form: .p2).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .subjunctivePresentPerfect, form: .p2))
+                }
+                if(Question(infinitive: curVerb.name, tense: .subjunctivePresentPerfect, form: .p3).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .subjunctivePresentPerfect, form: .p3))
+                }
+            }
+            
+            if(subFuturePerfect) {
+                if(Question(infinitive: curVerb.name, tense: .subjunctiveFuturePerfect, form: .s1).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .subjunctiveFuturePerfect, form: .s1))
+                }
+                if(Question(infinitive: curVerb.name, tense: .subjunctiveFuturePerfect, form: .s2).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .subjunctiveFuturePerfect, form: .s2))
+                }
+                if(Question(infinitive: curVerb.name, tense: .subjunctiveFuturePerfect, form: .s3).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .subjunctiveFuturePerfect, form: .s3))
+                }
+                if(Question(infinitive: curVerb.name, tense: .subjunctiveFuturePerfect, form: .p1).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .subjunctiveFuturePerfect, form: .p1))
+                }
+                if(Question(infinitive: curVerb.name, tense: .subjunctiveFuturePerfect, form: .p2).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .subjunctiveFuturePerfect, form: .p2))
+                }
+                if(Question(infinitive: curVerb.name, tense: .subjunctiveFuturePerfect, form: .p3).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .subjunctiveFuturePerfect, form: .p3))
+                }
+            }
+            
+            if(subPastPerfect) {
+                if(Question(infinitive: curVerb.name, tense: .subjunctivePastPerfect, form: .s1).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .subjunctivePastPerfect, form: .s1))
+                }
+                if(Question(infinitive: curVerb.name, tense: .subjunctivePastPerfect, form: .s2).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .subjunctivePastPerfect, form: .s2))
+                }
+                if(Question(infinitive: curVerb.name, tense: .subjunctivePastPerfect, form: .s3).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .subjunctivePastPerfect, form: .s3))
+                }
+                if(Question(infinitive: curVerb.name, tense: .subjunctivePastPerfect, form: .p1).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .subjunctivePastPerfect, form: .p1))
+                }
+                if(Question(infinitive: curVerb.name, tense: .subjunctivePastPerfect, form: .p2).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .subjunctivePastPerfect, form: .p2))
+                }
+                if(Question(infinitive: curVerb.name, tense: .subjunctivePastPerfect, form: .p3).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .subjunctivePastPerfect, form: .p3))
+                }
+            }
+            
             if(imperativeAffirmative) {
-                questionList.append(Question(infinitive: curVerb.name, tense: .imperativeAffirmative, form: .s1))
-                questionList.append(Question(infinitive: curVerb.name, tense: .imperativeAffirmative, form: .s2))
-                questionList.append(Question(infinitive: curVerb.name, tense: .imperativeAffirmative, form: .s3))
-                questionList.append(Question(infinitive: curVerb.name, tense: .imperativeAffirmative, form: .p1))
-                questionList.append(Question(infinitive: curVerb.name, tense: .imperativeAffirmative, form: .p2))
-                questionList.append(Question(infinitive: curVerb.name, tense: .imperativeAffirmative, form: .p3))
+                if(Question(infinitive: curVerb.name, tense: .imperativeAffirmative, form: .s1).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .imperativeAffirmative, form: .s1))
+                }
+                if(Question(infinitive: curVerb.name, tense: .imperativeAffirmative, form: .s2).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .imperativeAffirmative, form: .s2))
+                }
+                if(Question(infinitive: curVerb.name, tense: .imperativeAffirmative, form: .s3).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .imperativeAffirmative, form: .s3))
+                }
+                if(Question(infinitive: curVerb.name, tense: .imperativeAffirmative, form: .p1).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .imperativeAffirmative, form: .p1))
+                }
+                if(Question(infinitive: curVerb.name, tense: .imperativeAffirmative, form: .p2).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .imperativeAffirmative, form: .p2))
+                }
+                if(Question(infinitive: curVerb.name, tense: .imperativeAffirmative, form: .p3).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .imperativeAffirmative, form: .p3))
+                }
             }
+            
             if(imperativeNegative) {
-                questionList.append(Question(infinitive: curVerb.name, tense: .imperativeNegative, form: .s1))
-                questionList.append(Question(infinitive: curVerb.name, tense: .imperativeNegative, form: .s2))
-                questionList.append(Question(infinitive: curVerb.name, tense: .imperativeNegative, form: .s3))
-                questionList.append(Question(infinitive: curVerb.name, tense: .imperativeNegative, form: .p1))
-                questionList.append(Question(infinitive: curVerb.name, tense: .imperativeNegative, form: .p2))
-                questionList.append(Question(infinitive: curVerb.name, tense: .imperativeNegative, form: .p3))
+                if(Question(infinitive: curVerb.name, tense: .imperativeNegative, form: .s1).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .imperativeNegative, form: .s1))
+                }
+                if(Question(infinitive: curVerb.name, tense: .imperativeNegative, form: .s2).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .imperativeNegative, form: .s2))
+                }
+                if(Question(infinitive: curVerb.name, tense: .imperativeNegative, form: .s3).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .imperativeNegative, form: .s3))
+                }
+                if(Question(infinitive: curVerb.name, tense: .imperativeNegative, form: .p1).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .imperativeNegative, form: .p1))
+                }
+                if(Question(infinitive: curVerb.name, tense: .imperativeNegative, form: .p2).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .imperativeNegative, form: .p2))
+                }
+                if(Question(infinitive: curVerb.name, tense: .imperativeNegative, form: .p3).conjugated != "") {
+                    questionList.append(Question(infinitive: curVerb.name, tense: .imperativeNegative, form: .p3))
+                }
             }
         }
     }

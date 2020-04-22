@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct GameSession: View {
+struct WriteSession: View {
     @Environment (\.presentationMode) var presentationMode
     @Binding var isLandingPageRootActive: Bool
     
@@ -94,9 +94,3 @@ struct GameSession: View {
             }
         }
     }
-
-struct PracticeSession_Previews {
-    static var previews: some View {
-        GameSession(isLandingPageRootActive: .constant(false), game: Game())
-    }
-}

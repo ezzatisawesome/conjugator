@@ -16,6 +16,7 @@ struct NewDeckView: View {
     
     @State var name = ""
     @State var verbsToPractice = [String]()
+    
     @State var indPresent: Bool = false
     @State var indPreterite: Bool = false
     @State var indFuture: Bool = false
@@ -45,10 +46,25 @@ struct NewDeckView: View {
         
         newSet.name = self.name
         newSet.verbsToPractice = self.verbsToPractice
+        
         newSet.indPresent = self.indPresent
         newSet.indPreterite = self.indPreterite
+        newSet.indImperfect = self.indImperfect
+        newSet.indFuture = self.indFuture
+        newSet.indConditional = self.indConditional
+        newSet.indPresentPerfect = self.indPresentPerfect
+        newSet.indFuturePerfect = self.indFuturePerfect
+        newSet.indPastPerfect = self.indPastPerfect
+        newSet.indPreteriteArchaic = self.indPreteriteArchaic
+        newSet.indConditionalPerfect = self.indConditionalPerfect
+        
         newSet.subPresent = self.subPresent
         newSet.subImperfect = self.subImperfect
+        newSet.subFuture = self.subFuture
+        newSet.subPresentPerfect = self.subPresentPerfect
+        newSet.subFuturePerfect = self.subFuturePerfect
+        newSet.subPastPerfect = self.subPastPerfect
+        
         newSet.impAffirmative = self.impAffirmative
         newSet.impNegative = self.impNegative
         //newSet.group = self.groupChoice
@@ -57,10 +73,10 @@ struct NewDeckView: View {
         do {
             try self.managedObjectContext.save()
             print("Order saved.")
-            self.presentationMode.wrappedValue.dismiss()
         } catch {
             print(error.localizedDescription)
         }
+        self.presentationMode.wrappedValue.dismiss()
     }
     
     var body: some View {
@@ -140,10 +156,10 @@ struct NewDeckView: View {
                         VStack(alignment: .leading) {
                             Text("Imperative")
                             Button(action: {self.impAffirmative.toggle()},
-                                   label: {Image(systemName: self.impAffirmative ? "checkmark.square" : "square"); Text("Present")}
+                                   label: {Image(systemName: self.impAffirmative ? "checkmark.square" : "square"); Text("Affirmative")}
                             )
                             Button(action: {self.impNegative.toggle()},
-                                   label: {Image(systemName: self.impNegative ? "checkmark.square" : "square"); Text("Present")}
+                                   label: {Image(systemName: self.impNegative ? "checkmark.square" : "square"); Text("Negative")}
                             )
                         }
                         

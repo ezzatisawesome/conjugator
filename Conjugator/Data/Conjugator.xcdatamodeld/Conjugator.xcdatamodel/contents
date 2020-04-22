@@ -4,14 +4,26 @@
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="impAffirmative" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="impNegative" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="indConditional" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="indConditionalPerfect" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="indFuture" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="indFuturePerfect" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="indImperfect" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="indPastPerfect" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="indPresent" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="indPresentPerfect" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="indPreterite" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="indPreteriteArchaic" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="subFuture" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="subFuturePerfect" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="subImperfect" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="subPastPerfect" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="subPresent" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="subPresentPerfect" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="verbsToPractice" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromData"/>
     </entity>
     <elements>
-        <element name="Deck" positionX="-36" positionY="81" width="128" height="178"/>
+        <element name="Deck" positionX="-36" positionY="81" width="128" height="358"/>
     </elements>
 </model>

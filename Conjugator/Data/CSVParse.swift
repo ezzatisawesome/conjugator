@@ -92,7 +92,7 @@ class CSVParse {
                 }
             }
             
-            else if (mood == "Subjuntive") {
+            if (mood == "Subjunctive") {
                 if (tense == "Present") {
                    let conj = Conjugations(tense: Tense.subjunctivePresent, s1: row[7], s2: row[8], s3: row[9], p1: row[10], p2: row[11], p3: row[12])
                    verbCompleteData[pos!].subPresent = conj
@@ -124,12 +124,12 @@ class CSVParse {
                 }
             }
             
-            else if (mood == "Imperative Afirmative") {
+            if (mood == "Imperative Affirmative") {
                let conj = Conjugations(tense: Tense.imperativeAffirmative, s1: row[7], s2: row[8], s3: row[9], p1: row[10], p2: row[11], p3: row[12])
                verbCompleteData[pos!].imperativeAffirmative = conj
             }
             
-            else if (mood == "Imperative Negative") {
+            if (mood == "Imperative Negative") {
                let conj = Conjugations(tense: Tense.imperativeNegative, s1: row[7], s2: row[8], s3: row[9], p1: row[10], p2: row[11], p3: row[12])
                verbCompleteData[pos!].imperativeNegative = conj
             }

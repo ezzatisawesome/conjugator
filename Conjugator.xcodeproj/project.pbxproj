@@ -26,13 +26,14 @@
 		EC2B9EB02437818E008D705C /* verb_database.csv in Resources */ = {isa = PBXBuildFile; fileRef = EC2B9EAF2437818E008D705C /* verb_database.csv */; };
 		EC2B9EC324378D21008D705C /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2B9EBD24378D21008D705C /* Dictionary.swift */; };
 		EC2B9EC424378D21008D705C /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2B9EBE24378D21008D705C /* Helper.swift */; };
+		EC897CB024525AF70023307E /* VerbImages+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC897CAE24525AF70023307E /* VerbImages+CoreDataClass.swift */; };
+		EC897CB124525AF70023307E /* VerbImages+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC897CAF24525AF70023307E /* VerbImages+CoreDataProperties.swift */; };
 		ECA8F11424397D7700C1BD73 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2B9E6A24377BFD008D705C /* SceneDelegate.swift */; };
 		ECA8F11524397D8000C1BD73 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2B9E6F24377BFD008D705C /* ContentView.swift */; };
 		ECB01E822437D50D0072324D /* NewDeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB01E812437D50D0072324D /* NewDeckView.swift */; };
 		ECB01E862437DD7A0072324D /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB01E852437DD7A0072324D /* Game.swift */; };
 		ECB01E8A2437E5DD0072324D /* WriteSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB01E892437E5DD0072324D /* WriteSession.swift */; };
 		ECB01E8E2437EF640072324D /* GameEnd.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB01E8D2437EF640072324D /* GameEnd.swift */; };
-		ECB01E902437FE1F0072324D /* testDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB01E8F2437FE1F0072324D /* testDesign.swift */; };
 		ECB01E95243805CC0072324D /* Neumorphic in Frameworks */ = {isa = PBXBuildFile; productRef = ECB01E94243805CC0072324D /* Neumorphic */; };
 		ECB01E97243818580072324D /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB01E96243818580072324D /* Background.swift */; };
 /* End PBXBuildFile section */
@@ -55,8 +56,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		EC0544C5244113F300D1368E /* Deck+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Deck+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		EC0544C6244113F300D1368E /* Deck+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Deck+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		EC0544C5244113F300D1368E /* Deck+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Deck+CoreDataClass.swift"; path = "Conjugator/Structure/CoreData/Deck+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		EC0544C6244113F300D1368E /* Deck+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Deck+CoreDataProperties.swift"; path = "Conjugator/Structure/CoreData/Deck+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		EC0B1B1524399C7F0077D700 /* GameDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetails.swift; sourceTree = "<group>"; };
 		EC0B543F244D57EB003DA2FF /* FlashCardSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardSession.swift; sourceTree = "<group>"; };
 		EC2B9E6524377BFD008D705C /* Conjugator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Conjugator.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,11 +82,12 @@
 		EC2B9EAF2437818E008D705C /* verb_database.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = verb_database.csv; sourceTree = "<group>"; };
 		EC2B9EBD24378D21008D705C /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
 		EC2B9EBE24378D21008D705C /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		EC897CAE24525AF70023307E /* VerbImages+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VerbImages+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		EC897CAF24525AF70023307E /* VerbImages+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VerbImages+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		ECB01E812437D50D0072324D /* NewDeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDeckView.swift; sourceTree = "<group>"; };
 		ECB01E852437DD7A0072324D /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		ECB01E892437E5DD0072324D /* WriteSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteSession.swift; sourceTree = "<group>"; };
 		ECB01E8D2437EF640072324D /* GameEnd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEnd.swift; sourceTree = "<group>"; };
-		ECB01E8F2437FE1F0072324D /* testDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testDesign.swift; sourceTree = "<group>"; };
 		ECB01E96243818580072324D /* Background.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -181,12 +183,11 @@
 		EC2B9E9F24377D14008D705C /* Structure */ = {
 			isa = PBXGroup;
 			children = (
+				EC897CAD24525AAD0023307E /* CoreData */,
 				EC2B9EA824377F2C008D705C /* ConjugationTenseForm.swift */,
 				EC2B9EA324377DC7008D705C /* Verb.swift */,
 				EC2B9EA124377DA8008D705C /* Question.swift */,
 				ECB01E852437DD7A0072324D /* Game.swift */,
-				EC0544C5244113F300D1368E /* Deck+CoreDataClass.swift */,
-				EC0544C6244113F300D1368E /* Deck+CoreDataProperties.swift */,
 			);
 			path = Structure;
 			sourceTree = "<group>";
@@ -204,26 +205,44 @@
 		EC2B9EB2243783DB008D705C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				ECB01E98243818640072324D /* Modifiers */,
+				ECB01E98243818640072324D /* Helper */,
+				EC897CB224525B710023307E /* PracticeTypes */,
 				EC2B9E6F24377BFD008D705C /* ContentView.swift */,
 				ECB01E812437D50D0072324D /* NewDeckView.swift */,
 				EC0B1B1524399C7F0077D700 /* GameDetails.swift */,
-				ECB01E892437E5DD0072324D /* WriteSession.swift */,
-				EC0B543F244D57EB003DA2FF /* FlashCardSession.swift */,
 				ECB01E8D2437EF640072324D /* GameEnd.swift */,
 				EC2B9EBD24378D21008D705C /* Dictionary.swift */,
 				EC2B9EBE24378D21008D705C /* Helper.swift */,
-				ECB01E8F2437FE1F0072324D /* testDesign.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		ECB01E98243818640072324D /* Modifiers */ = {
+		EC897CAD24525AAD0023307E /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				EC897CAE24525AF70023307E /* VerbImages+CoreDataClass.swift */,
+				EC897CAF24525AF70023307E /* VerbImages+CoreDataProperties.swift */,
+				EC0544C5244113F300D1368E /* Deck+CoreDataClass.swift */,
+				EC0544C6244113F300D1368E /* Deck+CoreDataProperties.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		EC897CB224525B710023307E /* PracticeTypes */ = {
+			isa = PBXGroup;
+			children = (
+				ECB01E892437E5DD0072324D /* WriteSession.swift */,
+				EC0B543F244D57EB003DA2FF /* FlashCardSession.swift */,
+			);
+			path = PracticeTypes;
+			sourceTree = "<group>";
+		};
+		ECB01E98243818640072324D /* Helper */ = {
 			isa = PBXGroup;
 			children = (
 				ECB01E96243818580072324D /* Background.swift */,
 			);
-			path = Modifiers;
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -372,6 +391,7 @@
 				ECA8F11424397D7700C1BD73 /* SceneDelegate.swift in Sources */,
 				EC2B9E6924377BFD008D705C /* AppDelegate.swift in Sources */,
 				ECB01E822437D50D0072324D /* NewDeckView.swift in Sources */,
+				EC897CB024525AF70023307E /* VerbImages+CoreDataClass.swift in Sources */,
 				EC0544C7244113F300D1368E /* Deck+CoreDataClass.swift in Sources */,
 				EC2B9EC324378D21008D705C /* Dictionary.swift in Sources */,
 				EC2B9EA424377DC7008D705C /* Verb.swift in Sources */,
@@ -379,13 +399,13 @@
 				EC0B1B1624399C7F0077D700 /* GameDetails.swift in Sources */,
 				ECB01E8A2437E5DD0072324D /* WriteSession.swift in Sources */,
 				EC2B9EA924377F2C008D705C /* ConjugationTenseForm.swift in Sources */,
-				ECB01E902437FE1F0072324D /* testDesign.swift in Sources */,
 				ECB01E8E2437EF640072324D /* GameEnd.swift in Sources */,
 				EC2B9EC424378D21008D705C /* Helper.swift in Sources */,
 				EC2B9EAE24378163008D705C /* CSVParse.swift in Sources */,
 				ECB01E862437DD7A0072324D /* Game.swift in Sources */,
 				EC0B5440244D57EB003DA2FF /* FlashCardSession.swift in Sources */,
 				ECB01E97243818580072324D /* Background.swift in Sources */,
+				EC897CB124525AF70023307E /* VerbImages+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

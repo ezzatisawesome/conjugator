@@ -37,6 +37,7 @@ class Game: ObservableObject {
     var imperativeNegative: Bool = false
     
     // Question lists to help with the delivering of data to the user
+    var rawQuestionList = [Question]()
     var questionList = [Question]()
     var questionsAnswered = [Question]()
     var questionsCorrect = [Question]()
@@ -53,11 +54,13 @@ class Game: ObservableObject {
         self.name = str
         self.indPresent = bool
         self.verbsToPractice = toPractice
+        for i in questionList {
+            rawQuestionList.append(i)
+        }
     }
     
     // setsVerbsToPractice by taking in comma separated string and splitting into an array
     func setVerbsToPractice(verbs: [String]) -> Void {
-        
         self.verbsToPractice = verbs
     }
     

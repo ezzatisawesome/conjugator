@@ -23,7 +23,13 @@
         <attribute name="subPresentPerfect" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="verbsToPractice" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromData"/>
     </entity>
+    <entity name="VerbImages" representedClassName="VerbImages" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="image" optional="YES" attributeType="Binary"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+    </entity>
     <elements>
         <element name="Deck" positionX="-36" positionY="81" width="128" height="358"/>
+        <element name="VerbImages" positionX="-36" positionY="234" width="128" height="88"/>
     </elements>
 </model>

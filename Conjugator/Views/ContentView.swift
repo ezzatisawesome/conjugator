@@ -15,9 +15,6 @@ struct ContentView: View {
                   sortDescriptors: [NSSortDescriptor(keyPath: \Deck.name, ascending: true)]
     ) var decks: FetchedResults<Deck>
     
-    init() {
-        UITableView.appearance().tableFooterView = UIView()
-    }
     
     var body: some View {
         NavigationView {
@@ -36,7 +33,7 @@ struct ContentView: View {
                     VStack {
                         Text("Decks").font(.title).underline().kerning(2)
                         self.deckList
-                    }.navigationBarItems(trailing: EditButton())
+                    }//.navigationBarItems(trailing: EditButton())
                 }
             }.navigationBarTitle("Conjugations")
         }.navigationViewStyle(StackNavigationViewStyle())

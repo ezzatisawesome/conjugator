@@ -15,36 +15,23 @@ struct GameDetails: View {
     @State var game = Game()
     
     func setup(type: practiceType) -> Bool {
+        game.setTenses(indPresent: self.set.indPresent, indPreterite: self.set.indPreterite, indFuture: self.set.indFuture, indImperfect: self.set.indImperfect, indConditional: self.set.indConditional, indPresentPerfect: self.set.indPresentPerfect, indFuturePerfect: self.set.indFuturePerfect, indPastPerfect: self.set.indPastPerfect, indPreteriteArchaic: self.set.indPreteriteArchaic, indConditionalPerfect: self.set.indConditionalPerfect, subPresent: self.set.subPresent, subImperfect: self.set.subImperfect, subFuture: self.set.subFuture, subPresentPerfect: self.set.subPresentPerfect, subFuturePerfect: self.set.subFuturePerfect, subPastPerfect: self.set.subPastPerfect, impAffirmative: self.set.impAffirmative, impNegative: self.set.impNegative)
+        game.setVerbsToPractice(verbs: self.set.verbsToPractice)
+        game.createQuestions()
+        if(game.questionList.count == 0) {
+            return false
+        }
         switch type {
         case .write:
-            game.setTenses(indPresent: self.set.indPresent, indPreterite: self.set.indPreterite, indFuture: self.set.indFuture, indImperfect: self.set.indImperfect, indConditional: self.set.indConditional, indPresentPerfect: self.set.indPresentPerfect, indFuturePerfect: self.set.indFuturePerfect, indPastPerfect: self.set.indPastPerfect, indPreteriteArchaic: self.set.indPreteriteArchaic, indConditionalPerfect: self.set.indConditionalPerfect, subPresent: self.set.subPresent, subImperfect: self.set.subImperfect, subFuture: self.set.subFuture, subPresentPerfect: self.set.subPresentPerfect, subFuturePerfect: self.set.subFuturePerfect, subPastPerfect: self.set.subPastPerfect, impAffirmative: self.set.impAffirmative, impNegative: self.set.impNegative)
-            game.setVerbsToPractice(verbs: self.set.verbsToPractice)
-            game.createQuestions()
-            if(game.questionList.count == 0) {
-                return false
-            }
             game.scrambleQuestions()
             game.nextQuestion()
-            return true
         case .flashcard:
-            game.setTenses(indPresent: self.set.indPresent, indPreterite: self.set.indPreterite, indFuture: self.set.indFuture, indImperfect: self.set.indImperfect, indConditional: self.set.indConditional, indPresentPerfect: self.set.indPresentPerfect, indFuturePerfect: self.set.indFuturePerfect, indPastPerfect: self.set.indPastPerfect, indPreteriteArchaic: self.set.indPreteriteArchaic, indConditionalPerfect: self.set.indConditionalPerfect, subPresent: self.set.subPresent, subImperfect: self.set.subImperfect, subFuture: self.set.subFuture, subPresentPerfect: self.set.subPresentPerfect, subFuturePerfect: self.set.subFuturePerfect, subPastPerfect: self.set.subPastPerfect, impAffirmative: self.set.impAffirmative, impNegative: self.set.impNegative)
-            game.setVerbsToPractice(verbs: self.set.verbsToPractice)
-            game.createQuestions()
-            if(game.questionList.count == 0) {
-                return false
-            }
+            break
         case .multipleChoice:
-            game.setTenses(indPresent: self.set.indPresent, indPreterite: self.set.indPreterite, indFuture: self.set.indFuture, indImperfect: self.set.indImperfect, indConditional: self.set.indConditional, indPresentPerfect: self.set.indPresentPerfect, indFuturePerfect: self.set.indFuturePerfect, indPastPerfect: self.set.indPastPerfect, indPreteriteArchaic: self.set.indPreteriteArchaic, indConditionalPerfect: self.set.indConditionalPerfect, subPresent: self.set.subPresent, subImperfect: self.set.subImperfect, subFuture: self.set.subFuture, subPresentPerfect: self.set.subPresentPerfect, subFuturePerfect: self.set.subFuturePerfect, subPastPerfect: self.set.subPastPerfect, impAffirmative: self.set.impAffirmative, impNegative: self.set.impNegative)
-            game.setVerbsToPractice(verbs: self.set.verbsToPractice)
-            game.createQuestions()
-            if(game.questionList.count == 0) {
-                return false
-            }
             game.scrambleQuestions()
             game.nextQuestion()
-            return true
         }
-        return false
+        return true
     }
     
     var body: some View {
@@ -73,7 +60,6 @@ struct GameDetails: View {
                     Text("Practice").font(.largeTitle)
                     
                     self.writeButton
-                    self.multipleChoiceButton
                     self.flashcardButton
                     
                     Spacer()
@@ -105,29 +91,35 @@ struct GameDetails: View {
         }
     }
     
+    /*
     @State var multipleChoiceRoot = false
     var multipleChoiceButton: some View {
         VStack {
-            NavigationLink(destination: Text("Coming Soon"), isActive: self.$multipleChoiceRoot)
+            NavigationLink(destination: MultipleChoiceSession(game: self.game, mcq: MCQuestion(inputQuestion: self.game.currentQuestion, questionList: self.game.rawQuestionList)), isActive: self.$multipleChoiceRoot)
                 {EmptyView()}.isDetailLink(false)
             
-            Button(action: {self.multipleChoiceRoot.toggle()}) {
+            Button(action: {
+                        if(!self.setup(type: .multipleChoice)) {
+                            self.showingAlert.toggle()
+                        }
+                self.multipleChoiceRoot.toggle()}) {
                 Text("Mutliple Choice")
             }.softButtonStyle(RoundedRectangle(cornerRadius: 10), mainColor: Color("Background"), textColor: Color.black, darkShadowColor: Color("DarkShadow"), lightShadowColor: Color("LightShadow"))
             .frame(width: 290, height: 30)
         }
     }
+ */
     
     @State var flashcardRoot = false
     var flashcardButton: some View {
         VStack {
-            NavigationLink(destination: FlashCardSession(game: self.game, currentQuestion: self.game.questionList[0]), isActive: self.$flashcardRoot)
+            NavigationLink(destination: FlashCardSession(game: self.game, currentQuestion: self.game.questionList.first ?? Question()), isActive: self.$flashcardRoot)
                 {EmptyView()}.isDetailLink(false)
             
             Button(
                 action: {
                     self.flashcardRoot.toggle()
-                    if(!self.setup(type: .write)) {
+                    if(!self.setup(type: .flashcard)) {
                         self.showingAlert.toggle()
                     }
                 },

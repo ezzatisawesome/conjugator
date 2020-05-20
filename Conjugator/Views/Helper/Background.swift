@@ -15,3 +15,11 @@ struct Neumorphic: ViewModifier {
             .shadow(color: Color("DarkShadow"), radius: 4, x: 4, y: 4)
     }
 }
+
+struct flashcard: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .shadow(color: Color("DarkShadow"), radius: 4, x: -4, y: -4)
+            .shadow(color: Color("DarkShadow"), radius: 4, x: 4, y: 4)
+    }
+}
